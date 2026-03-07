@@ -101,8 +101,7 @@ For complete security standards and implementation details, see [AWS Security St
 
 ```hcl
 module "sns_topic" {
-  source = "github.com/islamelkadi/terraform-aws-sns?ref=v1.0.0"
-  
+  source = "github.com/islamelkadi/terraform-aws-sns"
   namespace   = "example"
   environment = "prod"
   name        = "alerts"
@@ -130,8 +129,7 @@ module "sns_topic" {
 
 ```hcl
 module "sns_topic" {
-  source = "github.com/islamelkadi/terraform-aws-sns?ref=v1.0.0"
-  
+  source = "github.com/islamelkadi/terraform-aws-sns"
   security_controls = module.metadata.security_controls
   
   namespace   = "example"
@@ -185,8 +183,7 @@ module "sns_topic" {
 
 ```hcl
 module "fifo_topic" {
-  source = "github.com/islamelkadi/terraform-aws-sns?ref=v1.0.0"
-  
+  source = "github.com/islamelkadi/terraform-aws-sns"
   security_controls = module.metadata.security_controls
   
   namespace   = "example"
@@ -229,8 +226,7 @@ Both servers run via `uvx` and require no additional installation beyond the [bo
 
 ```hcl
 module "notifications" {
-  source = "../"
-
+  source = "github.com/islamelkadi/terraform-aws-sns"
   namespace    = var.namespace
   environment  = var.environment
   name         = var.name

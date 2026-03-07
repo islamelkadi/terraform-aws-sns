@@ -10,7 +10,6 @@ A reusable Terraform module for creating AWS SNS topics with subscriptions, encr
 - [Usage](#usage)
 - [Requirements](#requirements)
 - [MCP Servers](#mcp-servers)
-- [License](#license)
 
 
 ## Prerequisites
@@ -316,11 +315,6 @@ module "notifications" {
 | <a name="output_topic_name"></a> [topic\_name](#output\_topic\_name) | Name of the SNS topic |
 | <a name="output_topic_owner"></a> [topic\_owner](#output\_topic\_owner) | AWS account ID of the topic owner |
 
-
-## License
-
-MIT Licensed. See [LICENSE](LICENSE) for full details.
-<!-- END_TF_DOCS -->
 
 ## Examples
 

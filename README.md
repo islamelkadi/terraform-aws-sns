@@ -5,15 +5,13 @@ A reusable Terraform module for creating AWS SNS topics with subscriptions, encr
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Security Controls](#security-controls)
+- [Security](#security)
 - [Features](#features)
-- [Usage Examples](#usage-examples)
+- [Usage](#usage)
 - [Requirements](#requirements)
-- [Inputs](#inputs)
-- [Outputs](#outputs)
-- [Examples](#examples)
+- [MCP Servers](#mcp-servers)
+- [License](#license)
 
----
 
 ## Prerequisites
 
@@ -30,7 +28,11 @@ make bootstrap
 
 This will install/upgrade: tfenv, Terraform (via tfenv), tflint, terraform-docs, checkov, and pre-commit.
 
-## Security Controls
+
+
+## Security
+
+### Security Controls
 
 This module implements security controls to comply with:
 - AWS Foundational Security Best Practices (FSBP)
@@ -62,6 +64,33 @@ This module implements security controls to comply with:
 
 For complete security standards and implementation details, see [AWS Security Standards](../../../.kiro/steering/aws/aws-security-standards.md).
 
+### Environment-Based Security Controls
+
+Security controls are automatically applied based on the environment through the [terraform-aws-metadata](https://github.com/islamelkadi/terraform-aws-metadata?tab=readme-ov-file#security-profiles){:target="_blank"} module's security profiles:
+
+| Control | Dev | Staging | Prod |
+|---------|-----|---------|------|
+| KMS encryption | Optional | Required | Required |
+| Encryption in transit (TLS 1.2+) | Required | Required | Required |
+| Access control (IAM) | Enforced | Enforced | Enforced |
+| Dead letter queue | Optional | Recommended | Required |
+
+For full details on security profiles and how controls vary by environment, see the <a href="https://github.com/islamelkadi/terraform-aws-metadata?tab=readme-ov-file#security-profiles" target="_blank">Security Profiles</a> documentation.
+
+### Security Best Practices
+
+**Production Topics:**
+- Use KMS customer-managed keys for encryption
+- Enable delivery status logging for critical topics
+- Use IAM policies to restrict topic access
+- Configure dead letter queues for failed deliveries
+- Monitor delivery metrics in CloudWatch
+
+**Development Topics:**
+- KMS encryption still recommended
+- Delivery logging optional for cost savings
+
+For complete security standards and implementation details, see [AWS Security Standards](../../../.kiro/steering/aws/aws-security-standards.md).
 ## Features
 
 - SNS topic with KMS encryption
@@ -187,18 +216,6 @@ module "fifo_topic" {
 }
 ```
 
-## Environment-Based Security Controls
-
-Security controls are automatically applied based on the environment through the [terraform-aws-metadata](https://github.com/islamelkadi/terraform-aws-metadata?tab=readme-ov-file#security-profiles){:target="_blank"} module's security profiles:
-
-| Control | Dev | Staging | Prod |
-|---------|-----|---------|------|
-| KMS encryption | Optional | Required | Required |
-| Encryption in transit (TLS 1.2+) | Required | Required | Required |
-| Access control (IAM) | Enforced | Enforced | Enforced |
-| Dead letter queue | Optional | Recommended | Required |
-
-For full details on security profiles and how controls vary by environment, see the <a href="https://github.com/islamelkadi/terraform-aws-metadata?tab=readme-ov-file#security-profiles" target="_blank">Security Profiles</a> documentation.
 
 ## MCP Servers
 
@@ -299,9 +316,6 @@ module "notifications" {
 | <a name="output_topic_name"></a> [topic\_name](#output\_topic\_name) | Name of the SNS topic |
 | <a name="output_topic_owner"></a> [topic\_owner](#output\_topic\_owner) | AWS account ID of the topic owner |
 
-## Example
-
-See [example/](example/) for a complete working example with all features.
 
 ## License
 

@@ -73,20 +73,6 @@ Security controls are automatically applied based on the environment through the
 
 For full details on security profiles and how controls vary by environment, see the [Security Profiles](https://github.com/islamelkadi/terraform-aws-metadata?tab=readme-ov-file#security-profiles) documentation.
 
-### Security Best Practices
-
-**Production Topics:**
-- Use KMS customer-managed keys for encryption
-- Enable delivery status logging for critical topics
-- Use IAM policies to restrict topic access
-- Configure dead letter queues for failed deliveries
-- Monitor delivery metrics in CloudWatch
-
-**Development Topics:**
-- KMS encryption still recommended
-- Delivery logging optional for cost savings
-
-For complete security standards and implementation details, see [AWS Security Standards](../../../.kiro/steering/aws/aws-security-standards.md).
 ## Features
 
 - SNS topic with KMS encryption

@@ -20,7 +20,7 @@ module "sqs_queue" {
   # Direct reference to kms.tf module output
   kms_master_key_id = module.kms_key.key_id
 
-  message_retention_seconds = 345600  # 4 days
+  message_retention_seconds = 345600 # 4 days
 
   tags = {
     Purpose = "example-supporting-infrastructure"

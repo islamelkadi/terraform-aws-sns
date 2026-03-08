@@ -13,7 +13,7 @@ module "notifications" {
 
   # Subscription types
   email_subscriptions = [var.email_endpoint]
-  
+
   # Direct reference to dlq.tf module output
   sqs_subscriptions = [module.sqs_queue.queue_arn]
 

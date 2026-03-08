@@ -1,3 +1,16 @@
+## [1.0.3](https://github.com/islamelkadi/terraform-aws-sns/compare/v1.0.2...v1.0.3) (2026-03-08)
+
+
+### Bug Fixes
+
+* update incorrect parameter ([67624f8](https://github.com/islamelkadi/terraform-aws-sns/commit/67624f82520cf30388501101bb40948598204e6e))
+
+
+### Documentation
+
+* add GitHub Actions workflow status badges ([89583ca](https://github.com/islamelkadi/terraform-aws-sns/commit/89583ca26ad81f40abf742673a3c36a2d5db576d))
+* add security scan suppressions section to README ([a3aab46](https://github.com/islamelkadi/terraform-aws-sns/commit/a3aab466361940e138e53a23d6dcefbff13c9d43))
+
 ## [1.0.2](https://github.com/islamelkadi/terraform-aws-sns/compare/v1.0.1...v1.0.2) (2026-03-08)
 
 

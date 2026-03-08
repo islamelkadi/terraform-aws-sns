@@ -10,7 +10,7 @@
 #   sqs_subscriptions = [module.sqs_queue.queue_arn]
 
 module "sqs_queue" {
-  source = "git::https://github.com/islamelkadi/terraform-aws-sqs.git"
+  source = "git::https://github.com/islamelkadi/terraform-aws-sqs.git?ref=v1.0.0"
 
   namespace   = var.namespace
   environment = var.environment

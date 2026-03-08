@@ -18,7 +18,7 @@ module "sqs_queue" {
   region      = var.region
 
   # Direct reference to kms.tf module output
-  kms_master_key_id = module.kms_key.key_id
+  kms_key_arn = module.kms_key.key_arn
 
   message_retention_seconds = 345600 # 4 days
 

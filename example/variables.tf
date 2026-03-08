@@ -26,18 +26,8 @@ variable "display_name" {
   default     = ""
 }
 
-variable "kms_key_arn" {
-  description = "ARN of KMS key for encryption"
-  type        = string
-}
-
 variable "email_endpoint" {
   description = "Email address for notifications"
-  type        = string
-}
-
-variable "sqs_queue_arn" {
-  description = "ARN of SQS queue for notifications"
   type        = string
 }
 

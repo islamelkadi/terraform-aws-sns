@@ -1,3 +1,15 @@
+## [1.0.2](https://github.com/islamelkadi/terraform-aws-sns/compare/v1.0.1...v1.0.2) (2026-03-08)
+
+
+### Bug Fixes
+
+* add CKV_TF_1 suppression for external module metadata ([12b41bd](https://github.com/islamelkadi/terraform-aws-sns/commit/12b41bdf50aa2641eff5f537ad384822e94d4d26))
+* add skip-path for .external_modules in Checkov config ([a217207](https://github.com/islamelkadi/terraform-aws-sns/commit/a217207aa7f32346f604a5f1398efd5192612a1e))
+* address Checkov security findings ([69b27ad](https://github.com/islamelkadi/terraform-aws-sns/commit/69b27addaa7b6a7e37abe13aff83cdfba9e95710))
+* correct .checkov.yaml format to use simple list instead of id/comment dict ([233361e](https://github.com/islamelkadi/terraform-aws-sns/commit/233361e0c64973faa5a8cf2e9099455f114650bc))
+* remove skip-path from .checkov.yaml, rely on workflow-level skip_path ([8d56802](https://github.com/islamelkadi/terraform-aws-sns/commit/8d568029738a7dd37b81e76d644a042e3b8ae5aa))
+* update workflow path reference to terraform-security.yaml ([97c600b](https://github.com/islamelkadi/terraform-aws-sns/commit/97c600b19cc53a0d51b1436a1f7098acb5e8ecf1))
+
 ## [1.0.1](https://github.com/islamelkadi/terraform-aws-sns/compare/v1.0.0...v1.0.1) (2026-03-08)
 
 

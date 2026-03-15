@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/islamelkadi/terraform-aws-sns/compare/v1.0.3...v1.1.0) (2026-03-15)
+
+
+### Features
+
+* add manual triggering to release workflow ([8b9e7db](https://github.com/islamelkadi/terraform-aws-sns/commit/8b9e7dbb81c662347e666ffb3f29534b15c31f5c))
+
 ## [1.0.3](https://github.com/islamelkadi/terraform-aws-sns/compare/v1.0.2...v1.0.3) (2026-03-08)
 
 
